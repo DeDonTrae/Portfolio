@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raimo Dengeinge - Profile</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+
+    <header>
+        <h1>Raimo Dengeinge</h1>
+        <p>Junior Web App Developer | ASP.NET | Problem Solver</p>
+        <button id="themeToggle">Switch to Dark Mode</button>
+    </header>
+
+    <section id="about">
+        <img src="me.jpeg" alt="Raimo Dengeinge">
+        <p>I’m a Junior Software Developer passionate about building practical, user-friendly
+            web applications. I work extensively with ASP.NET and SQL, focusing on integrations and reporting systems,
+            all while following
+            modern UI/UX design principles.</p>
+    </section>
+
+
+    <section id="hobbies">
+        <h2>Hobbies</h2>
+        <ul>
+            <li>Basketball</li>
+            <li>Programming</li>
+            <li>Music</li>
+            <li>Content Creation</li>
+            <li>Gaming</li>
+        </ul>
+        <section id="cards" class="centred">
+            <div class=" card-container">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>Music</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Afrobeats, RNB, Jazz</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <h3>ASP.NET</h3>
+                        </div>
+                        <div class="card-back">
+                            <p>Back-end, APIs, EF Core</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centred">
+                <h2>GitHub Projects</h2>
+                <a href="https://github.com/DeDonTrae" target="_blank" rel="noopener noreferrer">
+                    <img src="https://github-readme-stats.vercel.app/api?username=DeDonTrae&show_icons=true&theme=default"
+                        alt="GitHub Stats for DeDonTrae">
+                </a>
+            </div>
+        </section>
+
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>ASP.NET MVC/Core</li>
+            <li>SQL & Entity Framework</li>
+            <li>HTML5, CSS3, JS</li>
+            <li>REST API / JWT</li>
+            <li>Static Designs</li>
+            <li>CodeIgniter</li>
+        </ul>
+    </section>
+
+    <section id="social">
+        <h2>Social Media</h2>
+        <div class="social-links">
+            <a href="https://open.spotify.com/user/tzhdy8riz7o2gzm071k2kp2ue?si=3346c930f7d8448b&nd=1&dlsi=c1fde5949f794f30"
+                target="_blank" rel="noopener noreferrer">Spotify</a>
+            <a href="https://www.linkedin.com/in/traena/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://www.instagram.com/trae.na/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+    </section>
+
+
+    <footer>
+        <p>Contact: <a href="mailto:raimo@nih.com.na">raimo@nih.com.na</a></p>
+        <p>WhatsApp: <a href="https://wa.me/264817279679?text=Hi Raimo, I found you via your portfolio" target="_blank"
+                rel="noopener noreferrer">Chat with
+                me</a></p>
+    </footer>
+
+    <script>
+        const toggleButton = document.getElementById('themeToggle');
+        const profileImage = document.querySelector('#about img');
+
+        function updateTheme(isDark) {
+            document.body.classList.toggle('dark-mode', isDark);
+            toggleButton.textContent = isDark ? 'Switch to Light Mode' : 'Switch to Dark Mode';
+            profileImage.src = isDark ? 'me2.jpg' : 'me.jpeg';
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        if (localStorage.getItem('theme') === 'dark') {
+            updateTheme(true);
+        } else {
+            updateTheme(false);
+        }
+
+        toggleButton.addEventListener('click', () => {
+            const isDark = !document.body.classList.contains('dark-mode');
+            updateTheme(isDark);
+        });
+
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('is-flipped');
+            });
+        });</script>
+
+</body>
+
+</html>
